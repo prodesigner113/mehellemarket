@@ -49,7 +49,7 @@ const PRODUCTS = [
     category: "içki",
     emoji: "🥛",
     image:
-      ".milla.png",
+      "milla.png",
     price: 0.4,
     stock: 2,
     desc: "Sərin ayran.",
@@ -60,7 +60,7 @@ const PRODUCTS = [
     category: "içki",
     emoji: "🥛",
     image:
-      "./sekiller/milla.png",
+      "milla.png",
     price: 0.4,
     stock: 3,
     desc: "Sərin ayran.",
