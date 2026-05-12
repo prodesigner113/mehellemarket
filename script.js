@@ -5,7 +5,7 @@ const PRODUCTS = [
     category: "qida",
     emoji: "🍞",
     image:
-      ".zavod coreyi.png",
+      "zavod coreyi.png",
     price: 0.55,
     stock: 999,
     desc: "Təzə zavod çörəyi.",
