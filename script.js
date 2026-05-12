@@ -5,7 +5,7 @@ const PRODUCTS = [
     category: "qida",
     emoji: "🍞",
     image:
-      "./sekiller/zavod coreyi.png",
+      "./zavod coreyi.png",
     price: 0.55,
     stock: 999,
     desc: "Təzə zavod çörəyi.",
@@ -49,7 +49,7 @@ const PRODUCTS = [
     category: "içki",
     emoji: "🥛",
     image:
-      "./sekiller/milla.png",
+      "./milla.png",
     price: 0.4,
     stock: 2,
     desc: "Sərin ayran.",
