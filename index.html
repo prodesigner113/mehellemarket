@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Məhəllə Market</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="#" aria-label="Məhəllə Market ana səhifə">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="22" height="22">
+              <path
+                d="M10 30L32 12l22 18v22a6 6 0 0 1-6 6H16a6 6 0 0 1-6-6V30Z"
+                fill="currentColor"
+                opacity="0.18"
+              />
+              <path
+                d="M12 29.5 32 13.5 52 29.5V52a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V29.5Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M25 56V40a7 7 0 0 1 14 0v16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path
+                d="M18 33h28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span class="brand__text">Məhəllə Market</span>
+        </a>
+
+        <form class="search" id="searchForm" role="search" aria-label="Məhsul axtarışı">
+          <input
+            class="search__input"
+            id="searchInput"
+            type="search"
+            placeholder="Məhsul axtar…"
+            autocomplete="off"
+          />
+        </form>
+
+        <div class="topbar__actions">
+          <button class="cartBtn" id="openCartBtn" type="button">
+            <span class="cartBtn__label">Səbət</span>
+            <span class="cartBtn__count" id="cartCount" aria-label="Səbətdəki məhsul sayı">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      
+
+      <section class="toolbar" aria-label="Shop controls">
+        <div class="toolbar__left">
+          <h2 class="toolbar__title">Məhsullar</h2>
+          <p class="toolbar__hint" id="resultsHint">Bütün məhsullar göstərilir</p>
+        </div>
+        <div class="toolbar__right">
+          <label class="sort">
+            <span class="sort__label">Sıralama</span>
+            <select class="sort__select" id="sortSelect">
+              <option value="featured">Tövsiyə olunan</option>
+              <option value="price_asc">Qiymət: ucuz → baha</option>
+              <option value="price_desc">Qiymət: baha → ucuz</option>
+              <option value="name_asc">Ad: A → Z</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="grid" id="productGrid" aria-label="Product list"></section>
+    </main>
+
+    <div class="drawerOverlay" id="drawerOverlay" aria-hidden="true"></div>
+    <aside
+      class="drawer"
+      id="cartDrawer"
+      aria-label="Səbət"
+      aria-hidden="true"
+    >
+      <div class="drawer__header">
+        <div class="drawer__titleWrap">
+          <h2 class="drawer__title">Səbət</h2>
+          <p class="drawer__subtitle" id="cartSubtitle">0 məhsul</p>
+        </div>
+        <button class="iconBtn" id="closeCartBtn" type="button" aria-label="Səbəti bağla">
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+
+      <div class="drawer__content">
+        <div class="cartEmpty" id="cartEmpty" hidden>
+          <p class="cartEmpty__title">Səbət boşdur.</p>
+          <p class="cartEmpty__text">Məhsul əlavə edin, burada görəcəksiniz.</p>
+          <button class="btn btn--primary" id="startShoppingBtn" type="button">
+            Alış-verişə başla
+          </button>
+        </div>
+
+        <ul class="cartList" id="cartList"></ul>
+      </div>
+
+      <div class="drawer__footer">
+        <div class="cartTotalRow" aria-label="Səbət ümumi məbləği">
+          <span class="cartTotalRow__label">Cəmi</span>
+          <strong class="cartTotalRow__value" id="cartTotal">0 ₼</strong>
+        </div>
+        <div class="drawer__cta">
+          <button class="btn" id="clearCartBtn" type="button">Səbəti təmizlə</button>
+          <button class="btn btn--primary" id="closeCartBtn2" type="button">Bağla</button>
+        </div>
+        <p class="drawer__note">
+          Hesablama hissəsi ləğv edilib — burada yalnız məhsulları görürsünüz.
+        </p>
+      </div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+      <span class="toast__text" id="toastText"></span>
+      <button class="toast__action" id="toastAction" type="button" hidden>Səbətə bax</button>
+    </div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
